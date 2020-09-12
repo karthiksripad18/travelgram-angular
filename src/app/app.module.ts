@@ -1,5 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { ToastrModule } from 'ngx-toastr';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +24,32 @@ import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
-  declarations: [AppComponent, PostComponent, UserComponent, HeaderComponent, FooterComponent, HomeComponent, AddpostComponent, PagenotfoundComponent, SigninComponent, SignupComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    PostComponent,
+    UserComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    AddpostComponent,
+    PagenotfoundComponent,
+    SigninComponent,
+    SignupComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    FontAwesomeModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    HttpClientModule,
+
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

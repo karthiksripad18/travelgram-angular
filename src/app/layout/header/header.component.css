@@ -1,3 +1,7 @@
 .active {
   border-bottom: 1px solid #fff;
 }
+
+.email {
+  border: black solid;
+}

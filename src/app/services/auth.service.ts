@@ -16,7 +16,7 @@ export class AuthService {
   }
 
   getUser(): any {
-    this.auth.authState;
+    return this.auth.authState;
   }
 
   signOut() {
